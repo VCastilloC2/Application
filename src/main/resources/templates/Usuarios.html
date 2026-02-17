@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios</title>
+    <link rel="stylesheet" th:href="@{/Css/Style.css}">
+</head>
+<body class="bg">
+
+<div class="card-large">
+    <h2>Lista de Usuarios</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Username</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="u : ${usuarios}">
+            <td th:text="${u.id}"></td>
+            <td th:text="${u.nombres}"></td>
+            <td th:text="${u.apellidos}"></td>
+            <td th:text="${u.username}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/}" class="btn">Volver</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error 401</title>
+    <link rel="stylesheet" th:href="@{/Css/Error.css}">
+</head>
+<body>
+
+<div class="error-box">
+    <h1 class="error-code">401</h1>
+    <p class="error-message">No estás autenticado</p>
+    <a th:href="@{/auth/login}" class="home-btn">Iniciar Sesión</a>
+</div>
+
+</body>
+</html>

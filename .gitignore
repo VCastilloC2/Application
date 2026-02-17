@@ -1,0 +1,28 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Variables de entorno ###
+.env
+*.env
+.env.*
+*.local
+
+### Configuración sensible Spring ###
+application-local.properties
+application-local.yml

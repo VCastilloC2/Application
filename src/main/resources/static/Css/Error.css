@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.error-box {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 50px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    width: 90%;
+    max-width: 500px;
+}
+
+.error-code {
+    font-size: 120px;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(45deg, #FFD700, #FF8C00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: float 3s ease-in-out infinite;
+}
+
+.error-message {
+    font-size: 20px;
+    margin: 15px 0 30px;
+    opacity: 0.9;
+}
+
+.home-btn {
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #FFD700, #FF8C00);
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
