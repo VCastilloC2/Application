@@ -1,8 +1,8 @@
 package com.Developpers.Application.Controller;
 
-import com.Developpers.Application.Entity.Dto.Request.CrearUsuarioRequest;
-import com.Developpers.Application.Entity.Dto.Response.UsuarioResponse;
-import com.Developpers.Application.Entity.UsuarioEntity;
+import com.Developpers.Application.Model.Dto.Request.CrearUsuarioRequest;
+import com.Developpers.Application.Model.Dto.Response.UsuarioResponse;
+import com.Developpers.Application.Model.UsuarioEntity;
 import com.Developpers.Application.Services.UsuarioServices;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +21,7 @@ import java.util.Map;
 public class UsuarioController {
 
     private final UsuarioServices usuarioServices;
+    private Map<String, String> response = new HashMap<>();
 
     @PostMapping("/usuarios")
     public ResponseEntity<UsuarioResponse> crearUsuario(
@@ -52,7 +53,6 @@ public class UsuarioController {
             @RequestParam String nombre,
             @RequestParam String apellido) {
 
-        Map<String, String> response = new HashMap<>();
         response.put("nombreCompleto: ", nombre + " " + apellido);
 
         return ResponseEntity.ok(response);

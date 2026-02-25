@@ -1,4 +1,4 @@
-package com.Developpers.Application.Entity.Dto.Request;
+package com.Developpers.Application.Model.Dto.Request;
 
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.validation.annotation.Validated;

@@ -1,4 +1,4 @@
-package com.Developpers.Application.Entity.Dto.Response;
+package com.Developpers.Application.Model.Dto.Response;
 
 public record UsuarioResponse(
         String nombres,

@@ -1,6 +1,6 @@
 package com.Developpers.Application.Utils;
 
-import com.Developpers.Application.Entity.UsuarioEntity;
+import com.Developpers.Application.Model.UsuarioEntity;
 import com.Developpers.Application.Repository.UsuarioRepository;
 import com.Developpers.Application.Services.UsuarioServices;
 import lombok.RequiredArgsConstructor;

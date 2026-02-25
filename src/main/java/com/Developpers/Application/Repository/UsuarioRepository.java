@@ -1,6 +1,6 @@
 package com.Developpers.Application.Repository;
 
-import com.Developpers.Application.Entity.UsuarioEntity;
+import com.Developpers.Application.Model.UsuarioEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
