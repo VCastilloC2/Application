@@ -69,7 +69,6 @@ public class SecurityConfiguration {
                    SESSION MANAGEMENT
                    ========================= */
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                         .sessionFixation(SessionManagementConfigurer.SessionFixationConfigurer::migrateSession)
                         .maximumSessions(1)
                         .maxSessionsPreventsLogin(false)
@@ -110,6 +109,10 @@ public class SecurityConfiguration {
                         .failureUrl("/auth/login?error=true")
                         .permitAll()
                 )
+
+                /* =========================
+                   AUTENTICACION BASICA
+                   ========================= */
                 .httpBasic(Customizer.withDefaults())
 
                 /* =========================
