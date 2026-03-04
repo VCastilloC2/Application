@@ -96,6 +96,7 @@ public class SecurityConfiguration {
 
                                                 // Publicas
                                                 .requestMatchers(HttpMethod.GET, "/api/params").permitAll()
+                                                .requestMatchers(HttpMethod.GET, "/api/params/**").permitAll()
                                                 .requestMatchers(HttpMethod.GET, "/api/usuarios").permitAll()
 
                                                 // Privadas

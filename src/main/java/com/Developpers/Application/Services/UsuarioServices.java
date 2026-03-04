@@ -1,8 +1,8 @@
 package com.Developpers.Application.Services;
 
-import com.Developpers.Application.Model.Dto.Request.CrearUsuarioRequest;
-import com.Developpers.Application.Model.Dto.Response.UsuarioResponse;
-import com.Developpers.Application.Model.UsuarioEntity;
+import com.Developpers.Application.Entity.Dto.Request.CrearUsuarioRequest;
+import com.Developpers.Application.Entity.Dto.Response.UsuarioResponse;
+import com.Developpers.Application.Entity.UsuarioEntity;
 import com.Developpers.Application.Repository.UsuarioRepository;
 import com.Developpers.Application.Services.Interface.UsuarioServicesInterface;
 import lombok.RequiredArgsConstructor;
@@ -11,13 +11,15 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class UsuarioServices implements UsuarioServicesInterface, UserDetailsService {
-
     private final PasswordEncoder passwordEncoder;
     private final UsuarioRepository usuarioRepository;
 
@@ -58,8 +60,7 @@ public class UsuarioServices implements UsuarioServicesInterface, UserDetailsSer
         usuarioRepository.save(usuario);
 
         return new UsuarioResponse(
-                usuario.getNombres(),
-                usuario.getApellidos()
+                "\n" + this.addCapitalLetter(usuario.getNombres()) + " " + this.addCapitalLetter(usuario.getApellidos()) + "\n"
         );
 
     }
@@ -70,6 +71,29 @@ public class UsuarioServices implements UsuarioServicesInterface, UserDetailsSer
     @Override
     public String addCapitalLetter(String palabra) {
          return palabra.toUpperCase();
+    }
+
+    /**
+     * @param nombre
+     * @param apellido
+     * @return
+     */
+    @Override
+    public UsuarioResponse getParams(String nombre, String apellido) {
+
+        UsuarioEntity usuario = usuarioRepository
+                .findByNombresAndApellidos(this.addCapitalLetter(nombre), this.addCapitalLetter(apellido))
+                .orElseThrow(() ->
+                        new RuntimeException(
+                                "Usuario no encontrado por su nombre: "
+                                        + nombre + " y su apellido: " + apellido + ".")
+                );
+
+        return new UsuarioResponse(
+                "nombreCompleto: "
+                        + this.addCapitalLetter(usuario.getNombres()) + " "
+                        + this.addCapitalLetter(usuario.getApellidos())
+        );
     }
 
     @Override

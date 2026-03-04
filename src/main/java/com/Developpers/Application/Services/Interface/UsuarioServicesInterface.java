@@ -1,8 +1,9 @@
 package com.Developpers.Application.Services.Interface;
 
-import com.Developpers.Application.Model.Dto.Request.CrearUsuarioRequest;
-import com.Developpers.Application.Model.Dto.Response.UsuarioResponse;
-import com.Developpers.Application.Model.UsuarioEntity;
+import com.Developpers.Application.Entity.Dto.Request.CrearUsuarioRequest;
+import com.Developpers.Application.Entity.Dto.Response.UsuarioResponse;
+import com.Developpers.Application.Entity.UsuarioEntity;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -19,4 +20,7 @@ public interface UsuarioServicesInterface {
 
     // Agregar un Usuario
     String addCapitalLetter(String palabra);
+
+    // Metodo del Params
+    UsuarioResponse getParams(String nombre, String apellido);
 }
